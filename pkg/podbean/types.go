@@ -10,6 +10,7 @@ type PodBeanInfo struct {
 	Description string
 	Link        string
 	Copyright   string
+	Logo        string
 	Episodes    []Episode
 }
 
