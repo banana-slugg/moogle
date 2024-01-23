@@ -1,6 +1,8 @@
 package podbean
 
 import (
+	"html/template"
+
 	"github.com/mmcdole/gofeed"
 )
 
@@ -21,7 +23,7 @@ func GetPodbean() (*PodBeanInfo, error) {
 	for _, item := range feed.Items {
 		info.Episodes = append(info.Episodes, Episode{
 			Title:       item.Title,
-			Description: item.Description,
+			Description: template.HTML(item.Description),
 			Published:   item.PublishedParsed,
 			Link:        item.Link,
 			DirectLink:  item.Enclosures[0].URL,

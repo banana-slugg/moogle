@@ -1,6 +1,9 @@
 package podbean
 
-import "time"
+import (
+	"html/template"
+	"time"
+)
 
 type PodBeanInfo struct {
 	Title       string
@@ -12,7 +15,7 @@ type PodBeanInfo struct {
 
 type Episode struct {
 	Title       string
-	Description string
+	Description template.HTML
 	Published   *time.Time
 	Link        string
 	DirectLink  string
