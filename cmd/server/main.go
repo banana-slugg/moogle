@@ -38,6 +38,8 @@ func main() {
 		return c.Render(http.StatusOK, "index", info)
 	})
 
+	e.Static("/public", "public")
+
 	port, ok := os.LookupEnv("PORT")
 
 	if !ok {
